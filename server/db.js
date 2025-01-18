@@ -1,8 +1,7 @@
-
 require('dotenv').config();
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI);
 
 const todosSchema = mongoose.Schema({
     title: String,
@@ -14,4 +13,4 @@ const todo = mongoose.model('todos', todosSchema);
 
 module.exports = {
     todo
-}
+};
